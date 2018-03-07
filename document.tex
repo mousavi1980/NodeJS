@@ -1,5 +1,10 @@
+
+
+
 sudo npm i -g npm  // update npm
 
+npm init
+npm install --save express
 
 git --version
 git add .
@@ -14,6 +19,28 @@ git status
 heroku login
 heroku create
 git remote add heroku https://git.heroku.com/salty-hollows-10996.git
+
+Package.json :
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"engines": {
+		"node": "9.7.1",
+		"npm": "5.6.0"
+	},
+	"scripts": {
+		"start": "node index.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.16.2",
+		"passport": "^0.4.0",
+		"passport-google": "^0.3.0"
+	}
+}
 
 
 git push heroku master
