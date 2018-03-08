@@ -1,10 +1,16 @@
 
 const express = require('express');
+const mongoose = require('mongoose');
+const keys = require('./config/keys.js')
+require('./models/Users.js')
+require('./services/passport.js');
 
-require('./services/passport');
+
 
 const app = express();
 require('./routes/authRoutes.js')(app)
+
+mongoose.connect(keys.mongoURI);
 
 app.get('/', (req, res) => {
   res.send({ bye : 'buddy' });
