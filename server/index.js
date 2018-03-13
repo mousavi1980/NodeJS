@@ -9,7 +9,7 @@ require('./models/Users.js');
 require('./services/passport.js');
 
 
-//mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
@@ -23,9 +23,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/authRoutes.js')(app)
+require('./routes/authRoutes.js')(app);
 
-app.get('/', (req, res) => res.send({bye: 'buddy'}));
+app.get('/', (req, res) => {
+    return res.send({bye: 'buddy'});
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

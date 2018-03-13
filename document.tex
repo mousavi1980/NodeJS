@@ -100,5 +100,12 @@ sudo npm install -g create-react-app
 create-react-app client
 cd client
 npm start
- 
+
+"scripts": {
+	"start": "node index.js",
+	"server": "nodemon index.js",
+	"client": "npm run start --prefix client",
+	"dev": "cuncurrently \"npm run server\" \"npm run client"\"" 
+	
+npm install --save cuncurrently 
 
